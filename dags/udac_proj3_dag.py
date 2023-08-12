@@ -1,15 +1,10 @@
 from datetime import datetime, timedelta
 import os
 from airflow import DAG
-# from airflow.operators.dummy_operator import DummyOperator
-# from airflow.operators import (StageToRedshiftOperator, LoadFactOperator,
-#                                 LoadDimensionOperator, DataQualityOperator)
 from airflow.operators.dummy_operator import DummyOperator
-from operators.create_table import CreateTableOperator
-from operators.stage_redshift import StageToRedshiftOperator
-from operators.load_fact import LoadFactOperator
-from operators.load_dimension import LoadDimensionOperator
-from operators.data_quality import DataQualityOperator
+from airflow.operators import (StageToRedshiftOperator, LoadFactOperator,
+                            LoadDimensionOperator, DataQualityOperator, CreateTableOperator)
+from airflow.operators.dummy_operator import DummyOperator
 from helpers import SqlQueries
 
 REDSHIFT_ID = 'redshift'
